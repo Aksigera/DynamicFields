@@ -1,0 +1,20 @@
+.w-dynamic-fields-row input[type='text'] {
+  width: 40%; }
+.w-dynamic-fields-row textarea,
+.w-dynamic-fields-row input[type='text'] {
+  display: inline-block;
+  vertical-align: top; }
+.w-dynamic-fields-row-delete {
+  min-width: 25px; }
+
+#w-dynamic-fields {
+  text-align: justify;
+  width: 70%; }
+  #w-dynamic-fields:after {
+    content: '';
+    display: inline-block;
+    width: 100%; }
+  #w-dynamic-fields-addRow {
+    min-width: 25px; }
+
+/*# sourceMappingURL=dynamic-fields.css.map */

@@ -1,0 +1,35 @@
+.w-dynamic-fields {
+
+  &-row {
+
+    input[type='text'] {
+      width: 40%;
+    }
+
+    textarea,
+    input[type='text'] {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    &-delete {
+      min-width: 25px;
+    }
+  }
+}
+
+#w-dynamic-fields {
+  text-align: justify;
+  width: 70%;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+
+  &-addRow {
+    min-width: 25px;
+  }
+}
+
