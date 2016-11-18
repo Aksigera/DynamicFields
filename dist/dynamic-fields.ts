@@ -22,8 +22,6 @@ namespace DynamicFields {
 
         $form:JQuery;
 
-        prefix:string;
-
         id:string;
 
         rowsCount:number;
@@ -75,7 +73,7 @@ namespace DynamicFields {
                     break;
 
                 default:
-                    throw new Error('jsonStructure of ' + this.constructor.name + ' is incorrect')
+                    throw new Error(`jsonStructure of ${this.constructor.name} is incorrect`)
             }
 
             return this;
@@ -103,7 +101,7 @@ namespace DynamicFields {
                         break;
 
                     default:
-                        throw new Error('jsonStructure of ' + this.constructor.name + ' is incorrect')
+                        throw new Error(`jsonStructure of ${this.constructor.name} is incorrect`)
                 }
             }
         }
@@ -114,21 +112,21 @@ namespace DynamicFields {
         }
 
         private deleteRow(number):DynamicField {
-            this.$field.find('.' + HTML_CLASS + '-row[title="' + number + '"]').remove();
+            this.$field.find(`.${HTML_CLASS}-row[title="${number}"]`).remove();
 
             return this;
         }
 
         private addRow(firstValue = '', secondValue = ''):DynamicField {
-            var html =
-                '<div class="' + HTML_CLASS + '-row" title="' + this.rowsCount + '">' +
-                '<button type="button" class="' + HTML_CLASS + '-row-delete">-</button>' +
-                '<input type="text" value="' + firstValue + '" placeholder="Имя..">' +
-                '<textarea rows="3" cols="60" placeholder="Значение..">' + secondValue + '</textarea>' +
-                '</div>';
-
+            var html = `
+                <div class="${HTML_CLASS}-row" title=" + this.rowsCount + ">
+                <button type="button" class="${HTML_CLASS}-row-delete">-</button>
+                <input type="text" value="${firstValue}" placeholder="Имя..">
+                <textarea rows="3" cols="60" placeholder="Значение..">${secondValue}</textarea>
+                </div>
+`;
             this.$addButton.before(html);
-            this.$field.find('div[title="' + this.rowsCount + '"] .' + HTML_CLASS + '-row-delete').on('click', function () {
+            this.$field.find(`div[title="${this.rowsCount}"] .${HTML_CLASS}-row-delete`).on('click', function () {
                 var number = this.parentNode.title;
                 dynamicField.deleteRow(number);
             });
