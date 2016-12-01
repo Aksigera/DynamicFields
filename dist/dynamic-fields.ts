@@ -119,7 +119,7 @@ namespace DynamicFields {
 
         private addRow(firstValue = '', secondValue = ''):DynamicField {
             var html = `
-                <div class="${HTML_CLASS}-row" title=" + this.rowsCount + ">
+                <div class="${HTML_CLASS}-row" title="${this.rowsCount}">
                 <button type="button" class="${HTML_CLASS}-row-delete">-</button>
                 <input type="text" value="${firstValue}" placeholder="Имя..">
                 <textarea rows="3" cols="60" placeholder="Значение..">${secondValue}</textarea>
